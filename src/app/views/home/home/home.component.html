@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+    body {font-size:16px;}
+    .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+    .w3-half img:hover{opacity:1}
+    </style>
+</head>
+<body>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Welcome</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Show Room.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/2023_Lamborghini_Huracan_Tecnica_1.jpg/1200px-2023_Lamborghini_Huracan_Tecnica_1.jpg" style="width:100%" onclick="onClick(this)" alt="lamborghini">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMRK2i_K5WYkHZxCVbAckqtjlhcW8p06ZDwA&s" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
+      <img src="https://www.turbo.fr/sites/default/files/styles/header_image/public/2023-07/Mercedes-AMG%20G%2063%20Grand%20Edition_02.jpg?itok=AL-uMlY2" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+    </div>
+
+    <div class="w3-half">
+      <img src="https://cdn.motor1.com/images/mgl/J7EjQ/s3/electric-ford-mustang-by-charge-cars.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="https://www.bmw-tunisia.com/content/dam/bmw/common/all-models/x-series/x6/2023/navigation/bmw-x-series-x6-m60i-modelfinder.png.asset.1675183272938.png" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+      <img src="https://cdn.motor1.com/images/mgl/BXOlYR/s1/fiat-pulse-abarth-2022.webp" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Some text about our services - what we do and what we offer. We are committed to offering a wide range of vehicles, from compact cars to luxury sedans, to suit every occasion and preference. Our team ensures that each vehicle is meticulously maintained and ready for your adventure. We aim to deliver a seamless rental experience, prioritizing your safety and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  
+  
+ 
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Our prices are designed to cater to your needs and offer an exceptional experience at an affordable cost. We are committed to providing top-quality solutions, whether it's for compact cars or luxury vehicles, with packages tailored to each type of journey. With our wide range of services and 24/7 assistance, your satisfaction is our priority.</p>
+  </div>
+  
+  <div class="w3-row-padding" style="display: flex;">
+    <div class="w3-half w3-margin-bottom w3-col l6 m12 s12" style="display: flex; flex-direction: column;">
+      <div class="w3-card-4" style="flex: 1;">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Compact Cars</li>
+          <li class="w3-padding-16">Unlimited Mileage</li>
+          <li class="w3-padding-16">24/7 Support</li>
+          <li class="w3-padding-16">Insurance Included</li>
+          <li class="w3-padding-16">Free GPS</li>
+          <li class="w3-padding-16">
+            <h2>$ 49/day</h2>
+            <span class="w3-opacity">per day</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="w3-half w3-margin-bottom w3-col l6 m12 s12" style="display: flex; flex-direction: column;">
+      <div class="w3-card-4" style="flex: 1;">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Luxury Cars</li>
+          <li class="w3-padding-16">Unlimited Mileage</li>
+          <li class="w3-padding-16">24/7 Chauffeur Service</li>
+          <li class="w3-padding-16">Insurance Included</li>
+          <li class="w3-padding-16">Free GPS and Wi-Fi</li>
+          <li class="w3-padding-16">
+            <h2>$ 99/day</h2>
+            <span class="w3-opacity">per day</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>"Ready to elevate your travels? Just fill out our form below and let us do the rest! We're here to make your journey unforgettable." </p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+</body>
+</html>

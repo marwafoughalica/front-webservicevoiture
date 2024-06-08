@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">All Cars</h6>
+      </div>
+      <div class="card-body">
+          <a routerLink="/admin/addcar" style="float: right;" class="btn btn-primary">Add Car</a>
+          <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Serie</th>
+                          <th>Date de mise en marche</th>
+                          <th>Make</th>
+                          <th>Model</th>
+                          <th>Image</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of dataArray; index as i">
+                          <td>{{item.serie}}</td>
+                          <td>{{item.dateMiseEnMarche}}</td>
+                          <td>{{item.make}}</td>
+                          <td>{{item.model}}</td>
+                          <td>
+                              <img [src]="path + item.image" alt="Car Image" style="width: 100px; height: auto;" *ngIf="item.image">
+                          </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Update</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form #f="ngForm" (ngSubmit)="updateCar(f)">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Serie</label>
+              <input type="text" class="form-control" placeholder="serie" name="serie" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Date</label>
+              <input type="date" class="form-control" placeholder="date" name="dateMiseEnMarche" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Make</label>
+              <textarea class="form-control" rows="3" name="make" ngModel></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Model</label>
+              <textarea class="form-control" rows="3" name="model" ngModel></textarea>
+            </div>
+            <div class="form-group">
+              <label for="file">Image</label>
+              <input type="file" class="form-control">
+            </div>
+            <button class="btn btn-primary">Update Car</button>
+          </form>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
